@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CalculadoraVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CalculadoraVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8LW-h1-5Yj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lb9-C4-Sxp" customClass="CalculadoraView" customModule="CalculadoraIMC" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="153"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="fPK-Cc-dRT">
+                                                <rect key="frame" x="20" y="32" width="374" height="89"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Altura" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t3x-Zh-dwY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="38"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Peso" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FAJ-cO-K4w">
+                                                        <rect key="frame" x="0.0" y="55" width="374" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="89" id="AyR-xa-gU3"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="fPK-Cc-dRT" firstAttribute="centerY" secondItem="lb9-C4-Sxp" secondAttribute="centerY" id="4uK-NQ-7J3"/>
+                                            <constraint firstItem="fPK-Cc-dRT" firstAttribute="leading" secondItem="lb9-C4-Sxp" secondAttribute="leading" constant="20" id="bec-OQ-zeZ"/>
+                                            <constraint firstAttribute="height" constant="153" id="iZI-jo-aKo"/>
+                                            <constraint firstAttribute="trailing" secondItem="fPK-Cc-dRT" secondAttribute="trailing" constant="20" id="qA8-ob-T4R"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="alturaTextField" destination="FAJ-cO-K4w" id="rR6-R0-nj9"/>
+                                            <outlet property="pesoTextField" destination="t3x-Zh-dwY" id="1l5-td-Enp"/>
+                                        </connections>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESULTADO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otx-3w-Zcy">
+                                        <rect key="frame" x="18" y="223" width="378" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="highlightedColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6e-1M-1rM">
+                                        <rect key="frame" x="24" y="259" width="367" height="32"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3m-7c-JXg">
+                                        <rect key="frame" x="24" y="316" width="367" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <state key="normal" title="Calcular">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clicouCalcularButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bau-qz-LRs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.79529630829015541" green="0.4922591887822666" blue="0.53241842219539859" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="f6e-1M-1rM" firstAttribute="leading" secondItem="8LW-h1-5Yj" secondAttribute="leading" constant="18" id="5jX-BQ-WSl"/>
+                                    <constraint firstAttribute="trailing" secondItem="f6e-1M-1rM" secondAttribute="trailing" constant="18" id="UGA-pM-8JY"/>
+                                    <constraint firstAttribute="trailing" secondItem="lb9-C4-Sxp" secondAttribute="trailing" id="YAr-OI-LNU"/>
+                                    <constraint firstItem="f6e-1M-1rM" firstAttribute="top" secondItem="otx-3w-Zcy" secondAttribute="bottom" constant="15" id="k1U-Bc-3Aj"/>
+                                    <constraint firstItem="otx-3w-Zcy" firstAttribute="top" secondItem="lb9-C4-Sxp" secondAttribute="bottom" constant="20" id="kJs-vo-ut5"/>
+                                    <constraint firstItem="otx-3w-Zcy" firstAttribute="leading" secondItem="8LW-h1-5Yj" secondAttribute="leading" constant="18" id="kUi-7m-ySs"/>
+                                    <constraint firstItem="lb9-C4-Sxp" firstAttribute="top" secondItem="8LW-h1-5Yj" secondAttribute="top" constant="50" id="lGM-5G-a2m"/>
+                                    <constraint firstItem="lb9-C4-Sxp" firstAttribute="leading" secondItem="8LW-h1-5Yj" secondAttribute="leading" id="xcv-sA-tOC"/>
+                                    <constraint firstAttribute="trailing" secondItem="otx-3w-Zcy" secondAttribute="trailing" constant="18" id="z1u-sM-9t7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8LW-h1-5Yj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JzJ-oV-rJR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8LW-h1-5Yj" secondAttribute="trailing" id="Kk6-ld-gaV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8LW-h1-5Yj" secondAttribute="bottom" id="P4c-4p-xyY"/>
+                            <constraint firstItem="8LW-h1-5Yj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="z9X-1O-lhe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outlet property="calcView" destination="lb9-C4-Sxp" id="5sl-zh-iga"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="calcView" destination="lb9-C4-Sxp" id="8Bf-f4-rTe"/>
+                        <outlet property="resultadoLabel" destination="f6e-1M-1rM" id="jJJ-UU-gof"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>
